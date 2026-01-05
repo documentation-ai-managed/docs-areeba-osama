@@ -1,0 +1,128 @@
+---
+title: Getting Started with Areeba Osama
+description: Set up your account and create your first documentation space in minutes to begin organizing your projects.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+<Callout kind="info">
+
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- An email address for account verification
+- Optional: GitHub account for repository integration
+
+</Callout>
+
+## Create Your Account
+
+Sign up for Areeba Osama in under a minute. Follow these steps to get started.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Your Details" icon="user">
+    Provide your email, create a password, and complete the CAPTCHA.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link and click it to activate your account.
+  </Step>
+</Steps>
+
+## Create a New Documentation Space
+
+Once logged in, set up your first space to organize project docs.
+
+<Steps>
+  <Step title="Click New Space" icon="plus">
+    From the dashboard, select **New Documentation Space**.
+  </Step>
+  <Step title="Name Your Space" icon="edit">
+    Enter a name like `My Project Docs` and choose a visibility (public or private).
+  </Step>
+  <Step title="Customize Settings" icon="settings">
+    Add a description and brand color (e.g., `#3B82F6`), then click **Create**.
+  </Step>
+</Steps>
+
+## Upload Initial Project Files
+
+Add your MDX files via the web interface or API.
+
+<Tabs>
+  <Tab title="Web UI" icon="upload">
+    Drag and drop your files into the **Files** section.
+
+    1. Open your new space.
+    2. Click **Upload Files**.
+    3. Select MDX, images, or other assets from your project folder.
+
+    <Callout kind="tip">
+      Supports bulk uploads up to 100MB.
+    </Callout>
+  </Tab>
+  <Tab title="API" icon="api">
+    Use the upload endpoint for automation.
+
+    <CodeGroup tabs="cURL,JavaScript">
+      ```bash
+      curl -X POST https://api.example.com/v1/spaces/{SPACE_ID}/files \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -F "file=@docs/introduction.mdx"
+      ```
+      ```javascript
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+
+      await fetch(`https://api.example.com/v1/spaces/${SPACE_ID}/files`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${YOUR_API_KEY}` },
+        body: formData,
+      });
+      ```
+    </CodeGroup>
+
+    Replace `{SPACE_ID}` with your space identifier and `YOUR_API_KEY` from dashboard settings.
+  </Tab>
+</Tabs>
+
+<ParamField path="SPACE_ID" param-type="string" required="true">
+  Unique identifier for your documentation space, found in the space settings.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token: `Bearer YOUR_API_KEY`.
+</ParamField>
+
+## Basic Interface Tour
+
+Explore the main sections of your documentation space.
+
+<Columns cols={3}>
+  <Card title="Editor" icon="edit-3" href="#">
+    Write and preview MDX docs with live rendering.
+  </Card>
+  <Card title="Files" icon="folder" href="#">
+    Manage uploads, versions, and file organization.
+  </Card>
+  <Card title="Preview" icon="eye" href="#">
+    Publish and share your live documentation site.
+  </Card>
+</Columns>
+
+## Next Steps
+
+Congratulations! You've set up Areeba Osama and uploaded your first files.
+
+<Callout kind="success">
+  Explore advanced features like custom domains and integrations in the [full documentation](/introduction).
+</Callout>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+
+- **Upload fails**: Check file size limits (`<50MB` per file) and API key permissions.
+- **Space not visible**: Verify email confirmation and refresh the dashboard.
+
+</Expandable>

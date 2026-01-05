@@ -1,0 +1,108 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released in Areeba Osama.
+---
+
+## Recent Updates
+
+You can follow the latest releases of Areeba Osama here. Each version includes new features, improvements, and bug fixes to enhance your documentation experience. Check the tags to quickly identify breaking changes or new capabilities.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration, allowing multiple users to edit documents simultaneously.
+- Introduced advanced search with filters for tags, dates, and content types.
+
+## Improvements
+
+- Enhanced performance of page rendering by `>30%` for large documentation sites.
+- Updated UI components with better accessibility support, including keyboard navigation.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated webhook support for custom notifications on document updates.
+- Added export options to PDF and Markdown with customizable templates.
+
+## Bug Fixes
+
+- Fixed issue where inline code blocks failed to highlight in dark mode.
+- Resolved synchronization errors during offline edits.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core documentation engine with MDX support and component rendering.
+- Full-text search across all projects and pages.
+- User authentication with API key management.
+
+## Breaking Changes
+
+- Updated configuration format from JSON to YAML for better readability.
+- Removed legacy shortcode syntax in favor of JSX components.
+
+</Update>
+
+## Upcoming Features
+
+Stay tuned for these enhancements in future releases. You can vote on priorities in our feedback portal.
+
+<Columns cols={2}>
+  <Card title="AI-Powered Summaries" icon="zap" href="https://feedback.areebaosama.com/ai-summaries">
+    Generate concise summaries of long documents automatically.
+  </Card>
+  <Card title="Version History" icon="git-branch" href="https://feedback.areebaosama.com/version-history">
+    Track and revert changes with full diff views.
+  </Card>
+  <Card title="Custom Themes" icon="palette" href="https://feedback.areebaosama.com/themes">
+    Apply brand colors and layouts to your docs.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Enable automatic updates in your project settings to always run the latest version. Visit your dashboard at `https://dashboard.example.com` to configure this.
+</Callout>
+
+## How to Upgrade
+
+Follow these steps to upgrade Areeba Osama to the latest version.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run the version check command:
+    
+````bash
+npx areeba-osama --version
+````
+  </Step>
+  <Step title="Update Package" icon="download">
+    Use your package manager to update:
+    
+    <CodeGroup tabs="npm,yarn">
+    ````bash
+npm install areeba-osama@latest
+````
+    ````bash
+yarn add areeba-osama@latest
+````
+    </CodeGroup>
+  </Step>
+  <Step title="Restart Server" icon="refresh-cw">
+    Restart your documentation server to apply changes.
+    
+````bash
+npm run dev
+````
+  </Step>
+</Steps>
+
+<Expandable title="Older Versions" default-open="false">
+  For versions prior to v1.0.0, refer to the archived changelog at `/legacy-changelog`. Key changes included initial MDX parsing fixes and basic component support.
+</Expandable>
